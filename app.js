@@ -1,5 +1,6 @@
 const express = require("express");
 const fetch = require("node-fetch");
+const bodyParser = require("body-parser")
 require("dotenv").config();
 
 const app = express()
@@ -8,9 +9,7 @@ const PORT = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static("public"))
 
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
 
@@ -18,7 +17,17 @@ app.get("/" , (req,res)=>{
     res.render("index")
 })
 app.post("/convert-mp3" , async(req,res)=>{
-    const videoId = req.body.videoID;
+
+    const URL = req.body.videoID;
+    const pattern = /(?:\?v=|\/embed\/|\/\d+\?v=|\/vi\/)([^\?&"'>]+)/;
+
+    const matches = URL.match(pattern);
+    let videoId = null;
+
+    if (matches && matches.length > 1) {
+        videoId = matches[1];
+    }
+    // const videoId = req.body.videoID;
     if(videoId === "undefined" ||
         videoId === "" ||
         videoId === null)

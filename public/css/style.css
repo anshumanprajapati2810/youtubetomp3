@@ -1,29 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
+  /* box-sizing: border-box; */
 }
-
-body{
-  color: white;
+.logo{
+    color: red;
+}
+body {
+  color: #f1f1f1;
   overflow: hidden;
   font-family: 'Orbitron', sans-serif;
+  background-color: #121212;
 }
 
-.top-container{
+.top-container {
   height: 40vh;
-  background-color: red;
+  background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
 }
 
-.bottom-container{
+.bottom-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 30px;
 }
 
-#form{
+#form {
   width: 600px;
   height: 40vh;
   margin: auto;
@@ -33,105 +37,113 @@ body{
   flex-direction: column;
   gap: 10px;
   padding-top: 20px;
+  background-color: transparent;
+  border-radius: 10px;
 }
 
-#form h1{
+#form h1 {
   font-style: italic;
-  text-shadow: 1px 1px darkgray;
+  text-shadow: 2px 2px 5px #000000;
+  color: #ffd700;
 }
 
-#form input{
+#form input {
   width: 300px;
   padding: 14px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
-  border: 1px solid lightgray;
-  font-family: inherit;
+  border: 1px solid #444444;
+  background-color: #1c1c1c;
+  color: #f1f1f1;
   outline: none;
-  box-shadow: 2px 2px 5px gray;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-#form button{
+#form button {
   padding: 14px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  border: 1px solid lightgray;
-  background-color: whitesmoke;
+  border: 1px solid #444444;
+  background-color: #444444;
+  color: #f1f1f1;
   cursor: pointer;
-  font-family: inherit;
-  box-shadow: 2px 3px 5px gray;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-out;
 }
 
-#form button:hover{
-  color:white;
-  background-color:  red;
-  border: 1px solid  red;
+#form button:hover {
+  color: #121212;
+  background-color: #ffd700;
+  border: 1px solid #ffd700;
   transform: scale(1.1);
 }
 
-.errors{
+.errors {
   width: 400px;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  flex-direction: column;
-  gap: 10px;
-  border-radius: 5px;
-  padding: 12px;
-  color: red;
-  background-color: #ffe6e6;
-  border: 1px solid red;
-}
-
-.success{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  color: black;
+  border-radius: 5px;
+  padding: 12px;
+  color: #ff4b4b;
+  background-color: #1c1c1c;
+  border: 1px solid #ff4b4b;
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.4);
 }
 
-#download-btn{
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #00ff00;
+  background-color: rgba(0, 128, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.4);
+}
+
+#download-btn {
   width: fit-content;
-  color: black;
   padding: 12px;
-  color: white;
-  background-color: red;
+  background-color: #444444;
   border-radius: 5px;
   text-decoration: none;
-  box-shadow: 2px 2px 5px gray;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   font-style: normal;
   cursor: pointer;
   letter-spacing: 1px;
   font-family: inherit;
-  border: 1px solid red;
+  border: 1px solid #444444;
   transition: 0.3s ease-out;
+  color: #f1f1f1;
 }
 
-#download-btn:hover{
-  color:black;
-  background-color:  white;
-  border: 1px solid  lightgray;
+#download-btn:hover {
+  color: #121212;
+  background-color: #ffd700;
+  border: 1px solid #ffd700;
   transform: scale(1.1);
 }
 
-@media(max-width:768px){
-  .bottom-container{
+@media (max-width: 768px) {
+  .bottom-container {
     width: 90%;
     margin: auto;
   }
 
-  #form, .success{
+  #form, .success {
     text-align: center;
     width: 100%;
   }
 }
 
-@media(max-width:480px){
-  #form input{
+@media (max-width: 480px) {
+  #form input {
     width: 50%;
   }
 }
